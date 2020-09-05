@@ -1,0 +1,11 @@
+{
+  "name": "eq",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
