@@ -1,10 +1,26 @@
 <head>
   <style>
-    canvas {
+    body {
       background: beige;
+    }
+
+    canvas {
+      /* display: none; */
+    }
+
+    #grid {
+      background: white;
+    }
+
+    img {
+      image-rendering: pixelated;
+      width: calc(64px * 20);
+      height: calc(32px * 16);
     }
   </style>
   <script defer src="dist/app.js"></script>
 </head>
 
-<canvas id="cnv" width="320" height="200" />
+<canvas id="bar" width="8" height="32"></canvas>
+<canvas id="grid" width="8" height="4"></canvas>
+<img id="img" />
