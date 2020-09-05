@@ -1,18 +1,17 @@
-const bar = document.getElementById('bar') as HTMLCanvasElement;
-
-drawBar();
-
-function drawBar() {
-  const ctx = bar.getContext('2d');
-
-  const grd = ctx.createLinearGradient(0, 0, 0, 32);
-  grd.addColorStop(0, 'red');
-  grd.addColorStop(0.5, 'yellow');
-  grd.addColorStop(1, 'green');
-
-  ctx.fillStyle = grd;
-  ctx.fillRect(0, 0, 8, 32);
-}
+import { bar } from './bar.js';
 
 const img = document.getElementById('img') as HTMLImageElement;
 img.src = bar.toDataURL();
+
+const grid = document.getElementById('grid') as HTMLCanvasElement;
+const ctx = grid.getContext('2d');
+
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 1;
+ctx.globalAlpha = 1;
+ctx.fillStyle = 'red';
+ctx.beginPath();
+ctx.moveTo(0, 0);
+ctx.lineTo(8, 0);
+ctx.lineTo(8, 4);
+ctx.stroke();
