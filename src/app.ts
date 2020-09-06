@@ -1,5 +1,9 @@
-import { bar } from './bar.js';
+import barData from './bar.js';
+import gridData from './grid.js';
 import './grid.js';
 
-const img = document.getElementById('img') as HTMLImageElement;
-img.src = bar.toDataURL();
+const bar = (document.getElementById('s-bar') as unknown) as SVGImageElement;
+bar.setAttribute('href', barData);
+
+const grid = (document.getElementById('s-grid') as unknown) as SVGImageElement;
+grid.setAttribute('href', gridData);

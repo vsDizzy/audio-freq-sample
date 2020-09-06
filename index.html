@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
   <style>
     body {
@@ -5,23 +6,34 @@
     }
 
     canvas {
-      /* display: none; */
+      display: none;
     }
 
-    #grid {
-      background: white;
+    * {
       image-rendering: pixelated;
     }
 
-    img {
-      image-rendering: pixelated;
-      width: calc(64px * 20);
-      height: calc(32px * 16);
+    #img {
+      width: calc(64px);
+      height: calc(32px);
     }
   </style>
   <script type="module" src="./dist/app.js"></script>
 </head>
 
-<canvas id="bar" width="8" height="32"></canvas>
-<canvas id="grid" width="8" height="4"></canvas>
-<img id="img" />
+<canvas id="bar" width="12" height="32"></canvas>
+<canvas id="grid" width="12" height="8"></canvas>
+
+<svg height="256">
+  <defs>
+    <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
+      <image id="s-grid"></image>
+    </pattern>
+    <mask id="mask">
+      <rect fill="url(#pt)" width="12" height="256"></rect>
+    </mask>
+    <image id="s-bar" height="256"></image>
+  </defs>
+
+  <use href="#s-bar" mask="url(#mask)"></use>
+</svg>
