@@ -5,7 +5,10 @@
       background: beige;
     }
 
-    canvas {
+    #bar,
+    #grid,
+    #ii,
+    svg {
       display: none;
     }
 
@@ -20,20 +23,25 @@
   </style>
   <script type="module" src="./dist/app.js"></script>
 </head>
+<body>
+  <canvas id="bar" width="12" height="32"></canvas>
+  <canvas id="grid" width="12" height="8"></canvas>
 
-<canvas id="bar" width="12" height="32"></canvas>
-<canvas id="grid" width="12" height="8"></canvas>
+  <svg xmlns="http://www.w3.org/2000/svg" id="s" height="256" width="12">
+    <defs>
+      <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
+        <image id="s-grid"></image>
+      </pattern>
+      <mask id="mask">
+        <rect fill="url(#pt)" width="12" height="256"></rect>
+      </mask>
+      <image id="s-bar" height="256"></image>
+    </defs>
 
-<svg height="256">
-  <defs>
-    <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
-      <image id="s-grid"></image>
-    </pattern>
-    <mask id="mask">
-      <rect fill="url(#pt)" width="12" height="256"></rect>
-    </mask>
-    <image id="s-bar" height="256"></image>
-  </defs>
+    <use href="#s-bar" mask="url(#mask)"></use>
+  </svg>
 
-  <use href="#s-bar" mask="url(#mask)"></use>
-</svg>
+  <canvas id="osc" width="384" height="256"></canvas>
+
+  <img id="ii" />
+</body>
