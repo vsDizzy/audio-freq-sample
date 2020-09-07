@@ -34,7 +34,6 @@ function init() {
   src.connect(ac.destination);
 
   draw();
-
   function draw() {
     const data = new Uint8Array(an.frequencyBinCount);
     an.getByteFrequencyData(data);
@@ -44,7 +43,9 @@ function init() {
       const x = Math.floor(data[i] / 8);
       const h = x * 8;
       let nh = osc.height - h;
-      ctx.drawImage(ii, 0, nh, 12, h, 12 * i, nh, 12, h);
+      if (h) {
+        ctx.drawImage(ii, 0, nh, 12, h, 12 * i, nh, 12, h);
+      }
     }
 
     requestAnimationFrame(draw);
