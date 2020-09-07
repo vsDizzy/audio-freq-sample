@@ -6,7 +6,7 @@
     "build": "tsc",
     "start": "tsc -w"
   },
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^4.0.2"
   }
 }
