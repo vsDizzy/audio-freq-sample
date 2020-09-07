@@ -2,46 +2,61 @@
 <head>
   <style>
     body {
-      background: beige;
+      font-family: 'Open Sans', sans-serif;
     }
 
-    #bar,
-    #grid,
-    #ii,
-    svg {
+    .hidden {
       display: none;
     }
 
     * {
       image-rendering: pixelated;
     }
-
-    #img {
-      width: calc(64px);
-      height: calc(32px);
-    }
   </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
   <script type="module" src="./dist/app.js"></script>
 </head>
 <body>
-  <canvas id="bar" width="12" height="32"></canvas>
-  <canvas id="grid" width="12" height="8"></canvas>
+  <div class="hidden">
+    <canvas id="bar" width="12" height="32"></canvas>
+    <canvas id="grid" width="12" height="8"></canvas>
 
-  <svg xmlns="http://www.w3.org/2000/svg" id="s" height="256" width="12">
-    <defs>
-      <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
-        <image id="s-grid"></image>
-      </pattern>
-      <mask id="mask">
-        <rect fill="url(#pt)" width="12" height="256"></rect>
-      </mask>
-      <image id="s-bar" height="256"></image>
-    </defs>
+    <svg xmlns="http://www.w3.org/2000/svg" id="s" height="256" width="12">
+      <defs>
+        <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
+          <image id="s-grid"></image>
+        </pattern>
+        <mask id="mask">
+          <rect fill="url(#pt)" width="12" height="256"></rect>
+        </mask>
+        <image id="s-bar" height="256"></image>
+      </defs>
 
-    <use href="#s-bar" mask="url(#mask)"></use>
-  </svg>
+      <use href="#s-bar" mask="url(#mask)"></use>
+    </svg>
 
-  <canvas id="osc" width="384" height="256"></canvas>
+    <img id="ii" />
+  </div>
 
-  <img id="ii" />
+  <h3>Frequency analyzer sample</h3>
+
+  <div>
+    <canvas id="osc" width="768" height="256"></canvas>
+  </div>
+  <div>
+    <audio
+      id="audio"
+      controls
+      src="data/53754_Kenotron__BURATINO__remixed.mp3"
+      loop
+      controlsList="nodownload"
+    ></audio>
+    <span>
+      Tune by
+      <a href="https://zxart.ee/rus/avtory/k/kenotron">Kenotron</a>
+    </span>
+  </div>
 </body>
