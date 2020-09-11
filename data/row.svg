@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="s" height="256" width="12">
+      <defs>
+        <pattern id="pt" width="12" height="8" patternUnits="userSpaceOnUse">
+          <image id="s-grid" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAIklEQVQoU2NkYGD4z0ACYPz//z/RGhgZGRlGNRAKXVAoAQCtVh0BsUXAQAAAAABJRU5ErkJggg=="></image>
+        </pattern>
+        <mask id="mask">
+          <rect fill="url(#pt)" width="12" height="256"></rect>
+        </mask>
+        <image id="s-bar" height="256" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAgCAYAAAAmG5mqAAAA/klEQVQ4T5WTMQ4BQRSG3985wh5hb8ANuAE34AYcQEKhlJBoJVtoJSRaiUKpUCgVWygVWyierJnZGbHYf5rZPzP/fu9/kwetiYpbgIh6KSUaGgWGwvn9AxqzhgZraIoKihAmww8N7bCEriXkzcn//GeHDgKCu+wqLNHQUUiw71CQPjV0LvqvjPAcmrAZtpYQdPatb648ew49sBnO7DukbIaMJGQPbwAgGsxDmUZ6Jwnnm6gbrCo7DleSsLmEBJPBkz41kpMhVJh/M1uzI5lhvDedrBL4da+/IzP01p5QDJollmm0V2SG1pJ8h/rCEMzyff+mEU9JQjQhDbUhZ3gC0D7W7WacPHgAAAAASUVORK5CYII="></image>
+      </defs>
+
+      <use href="#s-bar" mask="url(#mask)"></use>
+    </svg>
